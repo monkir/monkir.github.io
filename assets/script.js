@@ -8,4 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
             navbar.style.backgroundColor = "#222";
         }
     });
+    
+    // close mobile nav slide auto
+    window.navigation.addEventListener("navigate", (event) => {
+        document.getElementById("menu-check").checked = false;
+    })
 });
