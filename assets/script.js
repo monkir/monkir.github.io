@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     // close mobile nav slide auto
-    window.navigation.addEventListener("locationchange", (event) => {
+    window.addEventListener("locationchange", (event) => {
         document.getElementById("menu-check").checked = false;
     })
 });
