@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
             navbar.style.backgroundColor = "#222";
         }
     });
-    
+
     // close mobile nav slide auto
-    window.addEventListener("locationchange", (event) => {
+    window.addEventListener('popstate', function () {
         document.getElementById("menu-check").checked = false;
-    })
+    });
 });
