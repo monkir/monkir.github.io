@@ -1,36 +1,39 @@
 <!DOCTYPE html>
+<!-- saved from url=(0088)https://4a6869a7-cf62-4070-b7aa-43bbf7cf92c2-%2D1749931200-%2D15624433.app.yourware.app/ -->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monkir Chowdhury Portfolio</title>
+    <title>Monkir Chowdhury - Portfolio</title>
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-link-container">
-            <h1>
-                <a href="#hero">Portfolio</a>
-            </h1>
-            <div class="desktop-menu">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
+    <!-- Header -->
+    <header style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+        <nav class="container">
+            <div class="logo">Monkir Chowdhury</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
             <div class="mobile-menu">
                 <input type="checkbox" id="menu-check">
                 <label for="menu-check" class="menu-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" fill="white"
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="30px" fill="black"
                         viewBox="0 0 50 50">
                         <path
                             d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
                         </path>
                     </svg>
                 </label>
-                <ul>
+                <ul class="nav-links mobile-links">
                     <li>
                         <a href="#about">About</a>
                     </li>
@@ -45,48 +48,158 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    <header class="hero" id="hero">
-        <h1>Hi, I'm Monkir</h1>
-        <p>Full Stack Developer</p>
+        </nav>
     </header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Passionate developer with experience in ASP.NET, Next.js, Solidity, and more.</p>
-    </section>
-
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">ASP.NET</div>
-            <div class="skill">Next.js</div>
-            <div class="skill">React</div>
-            <div class="skill">NestJs</div>
-            <div class="skill">PostgreSQL</div>
-            <div class="skill">Bootstrap</div>
-            <div class="skill">Tailwind CSS</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Hi, I'm Monkir Chowdhury</h1>
+            <p>Passionate Developer</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project">Bus Ticketing System</div>
-            <div class="project">Air Booking System</div>
-            <div class="project">Zero Hunger</div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">MC</div>
+                <div class="about-text">
+                    <p>Passionate developer with experience in ASP.NET, Next.js, Solidity, and more. I enjoy creating
+                        efficient and effective solutions to complex problems through clean, maintainable code.</p>
+                    <br>
+                    <p>My goal is to leverage technology to create meaningful applications that solve real-world
+                        problems while continuously expanding my knowledge and skills in the ever-evolving field of
+                        software development.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: monkirchowdhury@gmail.com</p>
-        <p>GitHub: github.com/monkir</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>ASP.NET</h3>
+                    <p>Building robust, scalable web applications with Microsoft's powerful framework</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚛️</div>
+                    <h3>React &amp; Next.js</h3>
+                    <p>Creating dynamic, responsive user interfaces with React and server-side rendering with Next.js
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐦</div>
+                    <h3>NestJs</h3>
+                    <p>Developing efficient and maintainable backend applications with NestJs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>PostgreSQL &amp; Databases</h3>
+                    <p>Designing and implementing robust database solutions with PostgreSQL</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS Frameworks</h3>
+                    <p>Creating beautiful UIs with Bootstrap and Tailwind CSS</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⛓️</div>
+                    <h3>Solidity</h3>
+                    <p>Developing decentralized applications and smart contracts on the blockchain</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <script src="assets/script.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🚌</div>
+                    <div class="project-content">
+                        <h3>Bus Ticketing System</h3>
+                        <p>A comprehensive bus ticketing platform that allows users to search, book, and manage bus
+                            tickets online with secure payment processing.</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/monkir">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">✈️</div>
+                    <div class="project-content">
+                        <h3>Air Booking System</h3>
+                        <p>An airline reservation system featuring flight search, booking management, seat selection,
+                            and electronic ticketing capabilities.</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/monkir">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🍽️</div>
+                    <div class="project-content">
+                        <h3>Zero Hunger</h3>
+                        <p>A platform that connects food donors with distribution organizations to reduce food waste and
+                            combat hunger in communities.</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/monkir">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required="">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required="">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required=""></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/monkir" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <p>Email: <a href="mailto:monkirchowdhury@gmail.com"
+                    style="color: white; text-decoration: underline;">monkirchowdhury@gmail.com</a></p>
+            <p>© 2024 Monkir Chowdhury. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/assets/script.js"></script>
+
 </body>
 
 </html>

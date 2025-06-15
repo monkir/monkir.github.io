@@ -1,16 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector(".navbar-link-container");
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            navbar.style.backgroundColor = "rgba(34, 34, 34, 0.9)";
-        } else {
-            navbar.style.backgroundColor = "#222";
-        }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
+});
 
-    // close mobile nav slide auto
-    window.addEventListener('popstate', function () {
-        document.getElementById("menu-check").checked = false;
-    });
+// Form submission
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+});
+
+// Add scroll effect to header
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.background = '#fff';
+        header.style.backdropFilter = 'none';
+    }
 });
