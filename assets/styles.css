@@ -204,7 +204,7 @@ section {
     width: auto;
 }
 
-.skill-icon img.rounded{
+.rounded-full{
     border-radius: 100%;
 }
 
