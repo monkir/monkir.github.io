@@ -1,402 +1,1336 @@
 <!doctype html>
-<!-- saved from url=(0088)https://4a6869a7-cf62-4070-b7aa-43bbf7cf92c2-%2D1749931200-%2D15624433.app.yourware.app/ -->
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="google-site-verification"
-            content="6t8gMvlIKf1H4FhK6RbV3lcnoIJ5Zt78dOTsuxOnJls"
-        />
-        <title>Monkir Chowdhury - Portfolio</title>
-        <meta
-            name="description"
-            content="Portfolio of Monkir Chowdhury, a developer skilled in ASP.NET, Next.js, Solidity, and more. View projects and contact."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="stylesheet" href="assets/styles.css" />
-        <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
-    </head>
 
-    <body>
-        <!-- Header -->
-        <header style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px)">
-            <nav class="container">
-                <div class="logo">Monkir Chowdhury</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monkir Chowdhury - Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Monkir Chowdhury, a developer skilled in ASP.NET, Next.js, Solidity, and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #080b14;
+            --surface: #0e1320;
+            --surface2: #141927;
+            --accent: #4f8fff;
+            --accent2: #a78bfa;
+            --accent3: #38bdf8;
+            --text: #e8edf8;
+            --muted: #7a8aaa;
+            --border: rgba(79, 143, 255, 0.15);
+            --glow: rgba(79, 143, 255, 0.35);
+            --card-bg: rgba(14, 19, 32, 0.85);
+        }
 
-                <div class="mobile-menu">
-                    <input type="checkbox" id="menu-check" />
-                    <label for="menu-check" class="menu-button">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            x="0px"
-                            y="0px"
-                            width="30px"
-                            height="30px"
-                            fill="black"
-                            viewBox="0 0 50 50"
-                        >
-                            <path
-                                d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"
-                            ></path>
-                        </svg>
-                    </label>
-                    <ul class="nav-links mobile-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                    <label for="menu-check" class="mobile-links-backdrop"></label>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* ─── CUSTOM CURSOR ─── */
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        #cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: width .2s, height .2s, background .2s;
+            box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+        }
+
+        #cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid rgba(79, 143, 255, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: width .3s, height .3s, border-color .3s;
+        }
+
+        body:has(a:hover) #cursor-dot,
+        body:has(button:hover) #cursor-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--accent2);
+        }
+
+        body:has(a:hover) #cursor-ring,
+        body:has(button:hover) #cursor-ring {
+            width: 52px;
+            height: 52px;
+            border-color: var(--accent2);
+        }
+
+        /* ─── STARS / BG ─── */
+        #stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79, 143, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(167, 139, 250, 0.06) 0%, transparent 60%),
+                var(--bg);
+            pointer-events: none;
+        }
+
+        #stars::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 20% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+                radial-gradient(1px 1px at 75% 35%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+                radial-gradient(1px 1px at 10% 90%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 60% 55%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 45%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 85% 65%, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+        }
+
+        /* ─── GRID OVERLAY ─── */
+        #grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(79, 143, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 143, 255, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* ─── LAYOUT ─── */
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: .9rem 0;
+            background: rgba(8, 11, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: .88rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color .25s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ─── HERO ─── */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(79, 143, 255, 0.1);
+            border: 1px solid rgba(79, 143, 255, 0.25);
+            border-radius: 100px;
+            padding: .35rem 1rem;
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            animation: fadeSlideUp .8s ease both;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .4;
+                transform: scale(1.3)
+            }
+        }
+
+        h1.hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.2rem;
+            animation: fadeSlideUp .8s .1s ease both;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            animation: fadeSlideUp .8s .2s ease both;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeSlideUp .8s .3s ease both;
+        }
+
+        .btn-primary {
+            padding: .85rem 2rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+            border: none;
+            cursor: none;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 24px rgba(79, 143, 255, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 40px rgba(79, 143, 255, 0.5);
+        }
+
+        .btn-ghost {
+            padding: .85rem 2rem;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-weight: 500;
+            font-size: .95rem;
+            text-decoration: none;
+            cursor: none;
+            transition: border-color .2s, transform .2s, background .2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            background: rgba(79, 143, 255, 0.07);
+            transform: translateY(-3px);
+        }
+
+        /* floating 3d blobs */
+        .hero-blobs {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.18;
+            animation: floatBlob 8s ease-in-out infinite;
+        }
+
+        .blob1 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent2);
+            bottom: -80px;
+            right: 20%;
+            animation-delay: -3s;
+        }
+
+        .blob3 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent3);
+            top: 40%;
+            left: -80px;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatBlob {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1)
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05)
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* ─── SECTION TITLES ─── */
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: .5rem;
+        }
+
+        .section-sub {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: .6rem;
+        }
+
+        section {
+            padding: 7rem 0;
+        }
+
+        /* ─── ABOUT ─── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-img-wrap {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .about-img-card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transform-style: preserve-3d;
+            transition: transform .1s ease-out;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .about-img-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .about-img-glow {
+            position: absolute;
+            inset: -2px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(79, 143, 255, 0.3), rgba(167, 139, 250, 0.2));
+            z-index: -1;
+            filter: blur(20px);
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                opacity: .5
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        .about-text p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+        }
+
+        .stat-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .stat-label {
+            font-size: .8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        /* ─── SKILLS ─── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.6rem;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform .15s ease-out, box-shadow .3s;
+            cursor: default;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(79, 143, 255, 0.05) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 143, 255, 0.3), 0 0 40px rgba(79, 143, 255, 0.1);
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 1rem;
+        }
+
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .skill-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
+
+        .skill-card p {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ─── EXPERIENCE TIMELINE ─── */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--accent), var(--accent2), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            animation: fadeSlideUp .6s ease both;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.55rem;
+            top: .35rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 0 4px rgba(79, 143, 255, 0.15), 0 0 20px var(--glow);
+            z-index: 2;
+        }
+
+        .timeline-period {
+            font-size: .78rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: .5rem;
+        }
+
+        .timeline-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.6rem 1.8rem;
+            transform-style: preserve-3d;
+            transition: transform .15s ease-out, box-shadow .3s;
+        }
+
+        .timeline-card:hover {
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 143, 255, 0.25);
+        }
+
+        .timeline-role {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: .25rem;
+        }
+
+        .timeline-company {
+            font-size: .9rem;
+            color: var(--accent2);
+            font-weight: 500;
+            margin-bottom: .8rem;
+        }
+
+        .timeline-desc {
+            font-size: .88rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-size: .72rem;
+            padding: .2rem .7rem;
+            border-radius: 100px;
+            background: rgba(79, 143, 255, 0.1);
+            border: 1px solid rgba(79, 143, 255, 0.2);
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ─── PROJECTS ─── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform .15s ease-out, box-shadow .3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 143, 255, 0.3), 0 0 50px rgba(79, 143, 255, 0.08);
+        }
+
+        .project-emoji {
+            font-size: 2.8rem;
+            padding: 2rem 2rem 1rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .project-body {
+            padding: 0 1.8rem 1.8rem;
+        }
+
+        .project-body h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: .6rem;
+        }
+
+        .project-body p {
+            font-size: .86rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .project-shine {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: .9rem;
+            transition: color .2s;
+            padding: .6rem .8rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all .2s;
+        }
+
+        .contact-link:hover {
+            color: var(--text);
+            border-color: var(--border);
+            background: var(--surface);
+        }
+
+        .contact-link-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: rgba(79, 143, 255, 0.1);
+            border: 1px solid rgba(79, 143, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .form-group label {
+            font-size: .82rem;
+            font-weight: 500;
+            color: var(--muted);
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: .85rem 1rem;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: .95rem;
+            outline: none;
+            transition: border-color .25s, box-shadow .25s;
+            resize: none;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(79, 143, 255, 0.12);
+        }
+
+        .submit-btn {
+            padding: .9rem 2.2rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            font-weight: 600;
+            font-size: .95rem;
+            border: none;
+            cursor: none;
+            align-self: flex-start;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 24px rgba(79, 143, 255, 0.3);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 40px rgba(79, 143, 255, 0.45);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .social-links a {
+            font-size: .88rem;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        footer .social-links a:hover {
+            color: var(--accent);
+        }
+
+        footer p {
+            font-size: .82rem;
+            color: var(--muted);
+            margin: .25rem 0;
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: underline;
+        }
+
+        /* ─── SCROLL REVEAL ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (max-width: 800px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-row {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="stars"></div>
+    <div id="grid"></div>
+    <div id="cursor">
+        <div id="cursor-dot"></div>
+        <div id="cursor-ring"></div>
+    </div>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <nav class="container">
+            <div class="logo">Monkir Chowdhury</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ─── HERO ─── -->
+    <section id="home">
+        <div class="hero-blobs">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="blob blob3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">Available for work</div>
+                <h1 class="hero-title">Hi, I'm<br><span class="accent">Monkir Chowdhury</span></h1>
+                <p class="hero-sub">Passionate full-stack developer crafting enterprise solutions with ASP.NET, Next.js,
+                    Node.js, and blockchain technologies.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn-ghost">View Projects</a>
                 </div>
-            </nav>
-        </header>
-
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>Hi, I'm Monkir Chowdhury</h1>
-                <p>Passionate Developer</p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <img
-                        class="about-image rounded-full"
-                        src="/assets/social_image_resized.png"
-                        alt=""
-                    />
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrap reveal" data-tilt>
+                    <div class="about-img-glow"></div>
+                    <div class="about-img-card" id="aboutCard">
+                        <img src="/assets/social_image_resized.png" alt="Monkir Chowdhury"
+                            onerror="this.parentElement.innerHTML='<div style=\'height:380px;background:linear-gradient(135deg,rgba(79,143,255,0.15),rgba(167,139,250,0.1));display:flex;align-items:center;justify-content:center;font-size:5rem\'>👨‍💻</div>'" />
+                    </div>
+                </div>
+                <div class="reveal" style="transition-delay:.15s">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Crafting digital experiences with precision</h2>
                     <div class="about-text">
-                        <p>
-                            Passionate developer with experience in ASP.NET, Next.js, Solidity, and
-                            more. I enjoy creating efficient and effective solutions to complex
-                            problems through clean, maintainable code.
-                        </p>
-                        <br />
-                        <p>
-                            My goal is to leverage technology to create meaningful applications that
-                            solve real-world problems while continuously expanding my knowledge and
-                            skills in the ever-evolving field of software development.
-                        </p>
+                        <p>Passionate developer with experience in ASP.NET, Next.js, Solidity, and more. I enjoy
+                            creating efficient and effective solutions to complex problems through clean, maintainable
+                            code.</p>
+                        <p>My goal is to leverage technology to create meaningful applications that solve real-world
+                            problems while continuously expanding my knowledge and skills in the ever-evolving field of
+                            software development.</p>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Exp.</span>
+                        </div>
+                        <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects
+                                Built</span></div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
+    <!-- ─── SKILLS ─── -->
+    <section id="skills">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Expertise</div>
                 <h2 class="section-title">My Skills</h2>
-                <div class="skills-grid">
-                    <!-- ASP.NET -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img
-                                src="/assets/logo/Microsoft_.NET_logo.svg"
-                                class="rounded-full"
-                                alt="ASP.NET Icon"
-                            />
-                        </div>
-                        <h3>ASP.NET</h3>
-                        <p>
-                            Developed enterprise-level Web APIs and MVC applications for OTA, TRP,
-                            and ticketing systems with role-based authentication, optimized SQL
-                            procedures, and scalable architecture.
-                        </p>
-                    </div>
-
-                    <!-- Node.js -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/Node.js_logo.svg" alt="" />
-                        </div>
-                        <h3>Node.js</h3>
-                        <p>
-                            Built scalable backend services and REST APIs, handling asynchronous
-                            operations, database integration, and real-time application logic.
-                        </p>
-                    </div>
-
-                    <!-- Express.js -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/express-js-seeklogo.svg" alt="" />
-                        </div>
-                        <h3>Express.js</h3>
-                        <p>
-                            Designed RESTful APIs with middleware-based architecture, implemented
-                            authentication, routing, and efficient database communication.
-                        </p>
-                    </div>
-
-                    <!-- NestJS -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/NestJs-icon.svg" alt="" />
-                        </div>
-                        <h3>NestJs</h3>
-                        <p>
-                            Built modular and maintainable backend systems using TypeScript,
-                            dependency injection, and PostgreSQL integration for scalable
-                            applications.
-                        </p>
-                    </div>
-
-                    <!-- React -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/React-icon.svg" alt="" />
-                        </div>
-                        <h3>React</h3>
-                        <p>
-                            Developed dynamic dashboards and reusable UI components with efficient
-                            state management and seamless API integration.
-                        </p>
-                    </div>
-
-                    <!-- Next.js -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/next-js-seeklogo.svg" alt="" />
-                        </div>
-                        <h3>Next.js</h3>
-                        <p>
-                            Built full-stack applications with SSR, optimized routing, and
-                            production-ready frontend systems integrated with secure backend APIs.
-                        </p>
-                    </div>
-
-                    <!-- Tailwind CSS -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Icon" />
-                        </div>
-                        <h3>Tailwind CSS</h3>
-                        <p>
-                            Designed modern, responsive interfaces using utility-first styling to
-                            build clean and fast-loading web applications.
-                        </p>
-                    </div>
-
-                    <!-- Bootstrap -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/Bootstrap_logo.svg" alt="Bootstrap Icon" />
-                        </div>
-                        <h3>Bootstrap</h3>
-                        <p>
-                            Created responsive admin panels and business applications using grid
-                            systems and prebuilt UI components.
-                        </p>
-                    </div>
-
-                    <!-- Microsoft SQL -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img
-                                src="/assets/logo/microsoft-sql-server-logo-svgrepo-com.svg"
-                                alt=""
-                            />
-                        </div>
-                        <h3>Microsoft SQL Server</h3>
-                        <p>
-                            Designed relational databases, wrote complex stored procedures,
-                            optimized queries, and handled large-scale data processing.
-                        </p>
-                    </div>
-
-                    <!-- PostgreSQL -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/Postgresql_elephant.svg" alt="" />
-                        </div>
-                        <h3>PostgreSQL</h3>
-                        <p>
-                            Built efficient relational schemas, implemented indexing strategies, and
-                            optimized performance for scalable backend systems.
-                        </p>
-                    </div>
-
-                    <!-- MySQL -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="/assets/logo/MySQL.svg" alt="" />
-                        </div>
-                        <h3>MySQL</h3>
-                        <p>
-                            Managed structured databases, designed relational models, and developed
-                            optimized queries for reporting and analytics.
-                        </p>
-                    </div>
-
-                    <!-- Solidity -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/logo/icons8-solidity.svg" alt="Solidity Icon" />
-                        </div>
-                        <h3>Solidity</h3>
-                        <p>
-                            Developed secure smart contracts, implemented ERC20 token logic, and
-                            built blockchain-based donation and decentralized systems.
-                        </p>
-                    </div>
+                <p class="section-sub">Technologies I use to bring ideas to life</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal" data-tilt>
+                    <div class="skill-icon"><img src="/assets/logo/Microsoft_.NET_logo.svg" alt="ASP.NET" /></div>
+                    <h3>ASP.NET</h3>
+                    <p>Enterprise-level Web APIs and MVC applications for OTA, TRP, and ticketing systems with
+                        role-based auth and scalable architecture.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.05s">
+                    <div class="skill-icon"><img src="/assets/logo/Node.js_logo.svg" alt="Node.js" /></div>
+                    <h3>Node.js</h3>
+                    <p>Scalable backend services and REST APIs, handling async operations, database integration, and
+                        real-time application logic.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.1s">
+                    <div class="skill-icon"><img src="/assets/logo/express-js-seeklogo.svg" alt="Express" /></div>
+                    <h3>Express.js</h3>
+                    <p>RESTful APIs with middleware-based architecture, authentication, routing, and efficient database
+                        communication.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.15s">
+                    <div class="skill-icon"><img src="/assets/logo/NestJs-icon.svg" alt="NestJS" /></div>
+                    <h3>NestJS</h3>
+                    <p>Modular and maintainable backend systems using TypeScript, dependency injection, and PostgreSQL
+                        integration.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.2s">
+                    <div class="skill-icon"><img src="/assets/logo/React-icon.svg" alt="React" /></div>
+                    <h3>React</h3>
+                    <p>Dynamic dashboards and reusable UI components with efficient state management and seamless API
+                        integration.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.25s">
+                    <div class="skill-icon"><img src="/assets/logo/next-js-seeklogo.svg" alt="Next.js" /></div>
+                    <h3>Next.js</h3>
+                    <p>Full-stack applications with SSR, optimized routing, and production-ready frontend systems with
+                        secure backend APIs.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.3s">
+                    <div class="skill-icon"><img src="/assets/logo/Tailwind_CSS_Logo.svg" alt="Tailwind" /></div>
+                    <h3>Tailwind CSS</h3>
+                    <p>Modern, responsive interfaces using utility-first styling to build clean and fast-loading web
+                        applications.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.35s">
+                    <div class="skill-icon"><img src="/assets/logo/Postgresql_elephant.svg" alt="PostgreSQL" /></div>
+                    <h3>PostgreSQL</h3>
+                    <p>Efficient relational schemas, indexing strategies, and optimized performance for scalable backend
+                        systems.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.4s">
+                    <div class="skill-icon"><img src="/assets/logo/microsoft-sql-server-logo-svgrepo-com.svg"
+                            alt="SQL Server" /></div>
+                    <h3>SQL Server</h3>
+                    <p>Complex stored procedures, optimized queries, and large-scale data processing for enterprise
+                        applications.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.45s">
+                    <div class="skill-icon"><img src="/assets/logo/MySQL.svg" alt="MySQL" /></div>
+                    <h3>MySQL</h3>
+                    <p>Structured databases, relational models, and optimized queries for reporting and analytics.</p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.5s">
+                    <div class="skill-icon"><img src="/assets/logo/Bootstrap_logo.svg" alt="Bootstrap" /></div>
+                    <h3>Bootstrap</h3>
+                    <p>Responsive admin panels and business applications using grid systems and prebuilt UI components.
+                    </p>
+                </div>
+                <div class="skill-card reveal" data-tilt style="transition-delay:.55s">
+                    <div class="skill-icon"><img src="assets/logo/icons8-solidity.svg" alt="Solidity" /></div>
+                    <h3>Solidity</h3>
+                    <p>Secure smart contracts, ERC20 token logic, and blockchain-based decentralized systems.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
+    <!-- ─── EXPERIENCE TIMELINE ─── -->
+    <section id="experience">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Career</div>
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-sub">My professional journey in software development</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">April 2024 – Present</div>
+                    <div class="timeline-card" data-tilt>
+                        <div class="timeline-role">Junior Software Engineer</div>
+                        <div class="timeline-company"> Prime Tech Solutions Ltd.</div>
+                        <div class="timeline-desc">
+                            Contributing to a large-scale Online Travel Agency (OTA) platform serving 20+ travel
+                            partners.
+                            Developing and maintaining high-performance ASP.NET APIs and MVC applications.
+                            Integrating airline and ticketing systems via GDS and airline APIs.
+                            Designing optimized SQL stored procedures for high-volume transactional systems.
+                            Improving system reliability and performance through debugging and query optimization.</div>
+                        <div class="timeline-tags">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">GDS Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal" style="transition-delay:.1s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">October 2023 – March 2024</div>
+                    <div class="timeline-card" data-tilt>
+                        <div class="timeline-role">Research Assistant</div>
+                        <div class="timeline-company">Dr. Anwarul Abedin Institute of Innovation</div>
+                        <div class="timeline-desc">
+                            Contributed to the development of the Television Rating Point (TRP) analytics system.
+                            Built backend services using ASP.NET Core and MySQL for large-scale log processing.
+                            Developed reporting modules generating analytical insights from ad and program logs.
+                            Optimized complex SQL queries to improve reporting performance
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="timeline-item reveal" style="transition-delay:.2s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2020 – 2021</div>
+                    <div class="timeline-card" data-tilt>
+                        <div class="timeline-role">Junior Developer</div>
+                        <div class="timeline-company">Transport & Ticketing Solutions</div>
+                        <div class="timeline-desc">Built a role-based online bus booking platform with schedule
+                            management, secure ticket booking, discount systems, and full booking lifecycle operations.
+                            Delivered end-to-end with ASP.NET & Next.js stack.</div>
+                        <div class="timeline-tags">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal" style="transition-delay:.3s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2019 – 2020</div>
+                    <div class="timeline-card" data-tilt>
+                        <div class="timeline-role">Blockchain Developer (Freelance)</div>
+                        <div class="timeline-company">Decentralized Projects</div>
+                        <div class="timeline-desc">Developed secure Solidity smart contracts for ERC20 token logic and
+                            blockchain-based donation platforms. Integrated Web3 frontend with React to enable seamless
+                            wallet interactions and on-chain operations.</div>
+                        <div class="timeline-tags">
+                            <span class="tag">Solidity</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Web3.js</span>
+                            <span class="tag">ERC20</span>
+                            <span class="tag">Ethereum</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Work</div>
                 <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <!-- Online Travel Agency -->
-                    <div class="project-card">
-                        <div class="project-image">✈️</div>
-                        <div class="project-content">
-                            <h3>Online Travel Agency (OTA)</h3>
-                            <p>
-                                A full-scale B2B & B2C travel platform with real-time flight, hotel,
-                                and package booking. Integrated GDS & Airline APIs, hotel CRS
-                                modules, dynamic pricing, and complete booking lifecycle management.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a href="/projects/online-travel-agency.html">View Details</a>
-                                <a href="#">Live Demo</a>
-                            </div> -->
-                        </div>
+                <p class="section-sub">A selection of things I've built</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-shine"></div>
+                    <span class="project-emoji">✈️</span>
+                    <div class="project-body">
+                        <h3>Online Travel Agency (OTA)</h3>
+                        <p>Full-scale B2B & B2C travel platform with real-time flight, hotel, and package booking.
+                            Integrated GDS & Airline APIs, hotel CRS modules, dynamic pricing, and complete booking
+                            lifecycle management.</p>
                     </div>
-
-                    <!-- Hotel CRS -->
-                    <div class="project-card">
-                        <div class="project-image">🏨</div>
-                        <div class="project-content">
-                            <h3>Hotel Central Reservation System (CRS)</h3>
-                            <p>
-                                A centralized hotel management system handling room inventory, rate
-                                plans, cancellation policies, allotments, meal plans, and real-time
-                                availability with scalable ASP.NET Web APIs.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a href="/projects/hotel-crs.html">View Details</a>
-                                <a href="#">Live Demo</a>
-                            </div> -->
-                        </div>
+                </div>
+                <div class="project-card reveal" data-tilt style="transition-delay:.07s">
+                    <div class="project-shine"></div>
+                    <span class="project-emoji">🏨</span>
+                    <div class="project-body">
+                        <h3>Hotel Central Reservation System</h3>
+                        <p>Centralized hotel management system handling room inventory, rate plans, cancellation
+                            policies, allotments, meal plans, and real-time availability with scalable ASP.NET Web APIs.
+                        </p>
                     </div>
-
-                    <!-- Bus Ticketing -->
-                    <div class="project-card">
-                        <div class="project-image">🚌</div>
-                        <div class="project-content">
-                            <h3>Bus Ticketing System</h3>
-                            <p>
-                                A role-based online bus booking platform with schedule management,
-                                secure ticket booking, discount systems, and full booking lifecycle
-                                operations built with ASP.NET & Next.js.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a href="/projects/bus-ticketing-system.html">View Details</a>
-                                <a href="https://busticket-monkir.vercel.app/" target="_blank"
-                                    >Live Demo</a
-                                >
-                            </div> -->
-                        </div>
+                </div>
+                <div class="project-card reveal" data-tilt style="transition-delay:.14s">
+                    <div class="project-shine"></div>
+                    <span class="project-emoji">🚌</span>
+                    <div class="project-body">
+                        <h3>Bus Ticketing System</h3>
+                        <p>Role-based online bus booking platform with schedule management, secure ticket booking,
+                            discount systems, and full booking lifecycle operations built with ASP.NET & Next.js.</p>
                     </div>
-
-                    <!-- TRP Project -->
-                    <div class="project-card">
-                        <div class="project-image">📊</div>
-                        <div class="project-content">
-                            <h3>Television Rating Point (TRP)</h3>
-                            <p>
-                                A nationwide TV analytics system developed under BSCL to collect and
-                                analyze multi-GB viewership data, generating detailed reports from
-                                ad logs, program logs, and audience metrics.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a href="/projects/trp-analytics.html">View Details</a>
-                                <a href="https://d2a2i.aiub.edu/project-bscl.html" target="_blank"
-                                    >Project Info</a
-                                >
-                            </div> -->
-                        </div>
+                </div>
+                <div class="project-card reveal" data-tilt style="transition-delay:.21s">
+                    <div class="project-shine"></div>
+                    <span class="project-emoji">📊</span>
+                    <div class="project-body">
+                        <h3>Television Rating Point (TRP)</h3>
+                        <p>Nationwide TV analytics system to collect and analyze multi-GB viewership data, generating
+                            detailed reports from ad logs, program logs, and audience metrics.</p>
                     </div>
-
-                    <!-- Zero Hunger -->
-                    <div class="project-card">
-                        <div class="project-image">🍽️</div>
-                        <div class="project-content">
-                            <h3>Zero Hunger</h3>
-                            <p>
-                                A food redistribution management system that connects restaurants
-                                with collection teams to reduce food waste and automate surplus food
-                                distribution workflows.
-                            </p>
-                            <!-- <div class="project-links">
-                                <a href="/projects/zero-hunger.html">View Details</a>
-                                <a href="#">Live Demo</a>
-                            </div> -->
-                        </div>
+                </div>
+                <div class="project-card reveal" data-tilt style="transition-delay:.28s">
+                    <div class="project-shine"></div>
+                    <span class="project-emoji">🍽️</span>
+                    <div class="project-body">
+                        <h3>Zero Hunger</h3>
+                        <p>Food redistribution management system connecting restaurants with collection teams to reduce
+                            food waste and automate surplus food distribution workflows.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Contact</div>
                 <h2 class="section-title">Get In Touch</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required="" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required="" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required=""></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                <p class="section-sub">Let's build something great together</p>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="social-links">
-                    <a href="https://github.com/monkir" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/monkir/" target="_blank">LinkedIn</a>
-                    <a href="https://www.hackerrank.com/profile/monkir" target="_blank"
-                        >HackerRank</a
-                    >
+            <div class="contact-wrapper">
+                <div class="reveal contact-info">
+                    <h3>Let's talk about your project</h3>
+                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat
+                        about technology.</p>
+                    <div class="contact-links">
+                        <a href="mailto:monkirchowdhury@gmail.com" class="contact-link">
+                            <span class="contact-link-icon">✉️</span>
+                            monkirchowdhury@gmail.com
+                        </a>
+                        <a href="https://github.com/monkir" target="_blank" class="contact-link">
+                            <span class="contact-link-icon">🐙</span>
+                            github.com/monkir
+                        </a>
+                        <a href="https://www.linkedin.com/in/monkir/" target="_blank" class="contact-link">
+                            <span class="contact-link-icon">💼</span>
+                            linkedin.com/in/monkir
+                        </a>
+                        <a href="https://www.hackerrank.com/profile/monkir" target="_blank" class="contact-link">
+                            <span class="contact-link-icon">🏆</span>
+                            hackerrank.com/monkir
+                        </a>
+                    </div>
                 </div>
-                <p>
-                    Email:
-                    <a
-                        href="mailto:monkirchowdhury@gmail.com"
-                        style="color: white; text-decoration: underline"
-                        >monkirchowdhury@gmail.com</a
-                    >
-                </p>
-                <p>© 2024 Monkir Chowdhury. All rights reserved.</p>
+                <div class="reveal" style="transition-delay:.15s">
+                    <form class="contact-form" onsubmit="return false">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message →</button>
+                    </form>
+                </div>
             </div>
-        </footer>
-        <script src="/assets/script.js"></script>
-    </body>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/monkir" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/monkir/" target="_blank">LinkedIn</a>
+                <a href="https://www.hackerrank.com/profile/monkir" target="_blank">HackerRank</a>
+            </div>
+            <p>Email: <a href="mailto:monkirchowdhury@gmail.com">monkirchowdhury@gmail.com</a></p>
+            <p>© 2024 Monkir Chowdhury. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ─── CURSOR ───
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+        (function animRing() {
+            rx += (mx - rx) * .12; ry += (my - ry) * .12;
+            ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+            requestAnimationFrame(animRing);
+        })();
+
+        // ─── 3D TILT ───
+        function applyTilt(el) {
+            el.addEventListener('mousemove', e => {
+                const r = el.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - .5;
+                const y = (e.clientY - r.top) / r.height - .5;
+                const tiltX = y * -14, tiltY = x * 14;
+                el.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02,1.02,1.02)`;
+                // shine on project cards
+                const shine = el.querySelector('.project-shine');
+                if (shine) { shine.style.setProperty('--mx', (x + .5) * 100 + '%'); shine.style.setProperty('--my', (y + .5) * 100 + '%'); }
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+            });
+        }
+        document.querySelectorAll('[data-tilt]').forEach(applyTilt);
+
+        // ─── SCROLL REVEAL ───
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        // ─── HEADER ACTIVE NAV ───
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            sections.forEach(s => { if (scrollY >= s.offsetTop - 120) cur = s.id; });
+            navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : ''; });
+        }, { passive: true });
+    </script>
+</body>
+
 </html>
