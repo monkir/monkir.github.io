@@ -591,14 +591,14 @@
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
-            padding-left: 2rem;
+            /* padding-left: 2rem; */
             animation: fadeSlideUp .6s ease both;
         }
 
         .timeline-dot {
             position: absolute;
-            left: -2.55rem;
-            top: .35rem;
+            left: -2.45rem;
+            /* top: .35rem; */
             width: 14px;
             height: 14px;
             border-radius: 50%;
@@ -614,6 +614,7 @@
             letter-spacing: .08em;
             text-transform: uppercase;
             margin-bottom: .5rem;
+            padding-left: 0.5rem
         }
 
         .timeline-card {
@@ -905,6 +906,22 @@
 
             .stats-row {
                 gap: 1.5rem;
+            }
+
+            .container{
+                padding: 0 0.75rem;
+            }
+
+            .timeline{
+                padding-left: 0;
+            }
+
+            .timeline-item{
+                padding-left: 0.75rem;
+            }
+
+            .timeline-dot{
+                left: -0.45rem;
             }
         }
     </style>
