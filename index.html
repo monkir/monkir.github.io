@@ -157,6 +157,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-family: 'Syne', sans-serif;
             font-weight: 800;
             font-size: 1.1rem;
@@ -165,6 +168,13 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.02em;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .nav-links {
@@ -939,7 +949,10 @@
     <!-- ─── HEADER ─── -->
     <header>
         <nav class="container">
-            <div class="logo">Monkir Chowdhury</div>
+            <div class="logo">
+                <img src="assets/logo.png" alt="Monkir Chowdhury logo" />
+                Monkir Chowdhury
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
