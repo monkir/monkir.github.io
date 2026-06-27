@@ -32,6 +32,17 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
+// ─── SKILLS TABS ───
+const skillsTabs = document.querySelectorAll('.skills-tab');
+const skillsPanels = document.querySelectorAll('.skills-panel');
+skillsTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const cat = tab.dataset.cat;
+        skillsTabs.forEach(t => t.classList.toggle('active', t === tab));
+        skillsPanels.forEach(p => p.classList.toggle('active', p.dataset.cat === cat));
+    });
+});
+
 // ─── MOBILE SIDEBAR ───
 const menuToggle = document.getElementById('menuToggle');
 const sidebar = document.getElementById('sidebar');
@@ -59,6 +70,10 @@ sidebarClose.addEventListener('click', closeSidebar);
 sidebarOverlay.addEventListener('click', closeSidebar);
 document.querySelectorAll('.sidebar-links a').forEach(a => a.addEventListener('click', closeSidebar));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+
+// ─── FOOTER YEAR ───
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ─── HEADER ACTIVE NAV ───
 const sections = document.querySelectorAll('section[id]');

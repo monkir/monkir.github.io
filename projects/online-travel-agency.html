@@ -1,116 +1,156 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Online Travel Agency System | Monkir Chowdhury</title>
-        <meta
-            name="description"
-            content="Detailed case study of the Online Travel Agency (OTA) System developed by Monkir Chowdhury using ASP.NET, SQL Server, and API integrations."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../assets/styles.css" />
-    </head>
 
-    <body>
-        <header>
-            <nav class="container">
-                <div class="logo">Monkir Chowdhury</div>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html#projects">Projects</a></li>
-                    <li><a href="../index.html#contact">Contact</a></li>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Travel Agency (OTA) Solution | Monkir Chowdhury</title>
+    <meta name="description"
+        content="Case study of the Online Travel Agency (OTA) platform built by Monkir Chowdhury using ASP.NET, SQL Server, and GDS/Airline API integrations." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <div id="stars"></div>
+    <div id="grid"></div>
+    <div id="cursor">
+        <div id="cursor-dot"></div>
+        <div id="cursor-ring"></div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="../assets/logo_resized.png" alt="Monkir Chowdhury logo" />
+                Monkir Chowdhury
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a class="btn-resume" href="../assets/Monkir_Chowdhury_CV.pdf" target="_blank" rel="noopener">Resume</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="../assets/logo_resized.png" alt="Monkir Chowdhury logo" />
+                Monkir Chowdhury
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <div class="sidebar-resume">
+            <a href="../assets/Monkir_Chowdhury_CV.pdf" target="_blank" rel="noopener" class="btn-ghost">View CV</a>
+            <a href="../assets/Monkir_Chowdhury_CV.pdf" download class="btn-primary">Download CV</a>
+        </div>
+    </aside>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+            <div class="section-label">Case Study</div>
+            <h1 class="project-title">Online Travel Agency (OTA) Solution</h1>
+            <p class="project-tagline">Enterprise-level B2B & B2C travel platform with real-time flight, hotel, and
+                package booking, serving 20+ travel partners.</p>
+            <div class="project-meta-row">
+                <span class="project-meta-item">April 2024 – Present</span>
+                <span class="project-meta-item">Prime Tech Solutions Ltd.</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container project-cover-wrap">
+        <div class="project-cover"><img src="../assets/projects/ota.svg"
+                alt="Online Travel Agency (OTA) Solution cover" /></div>
+    </div>
+
+    <section class="project-details">
+        <div class="container">
+            <div class="project-section">
+                <h2>Project Overview</h2>
+                <p>A comprehensive Online Travel Agency platform designed to manage real-time flight, hotel, and tour
+                    package bookings for both B2B agents and B2C customers across 20+ travel partners. The system
+                    integrates external airline APIs and GDS services to keep fares, availability, and bookings
+                    synchronized in real time.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>My Role & Responsibilities</h2>
+                <ul>
+                    <li>Developed and maintained high-performance ASP.NET Web APIs and MVC applications.</li>
+                    <li>Integrated GDS and Airline APIs for real-time fares, availability, and booking data.</li>
+                    <li>Implemented full booking lifecycle workflows — search, book, issue, reissue, cancel, and
+                        refund.</li>
+                    <li>Designed optimized SQL stored procedures for high-volume transactional systems.</li>
+                    <li>Improved system reliability and performance through debugging and query optimization.</li>
                 </ul>
-            </nav>
-        </header>
-
-        <section class="project-hero">
-            <div class="container">
-                <h1>Online Travel Agency (OTA) System</h1>
-                <p>Enterprise-level B2B & B2C Travel Platform</p>
             </div>
-        </section>
 
-        <section class="project-details">
-            <div class="container">
-                <!-- Overview -->
-                <div class="project-section">
-                    <h2>Project Overview</h2>
-                    <p>
-                        A comprehensive Online Travel Agency platform designed to manage real-time
-                        flight, hotel, and tour package bookings for both B2B agents and B2C
-                        customers. The system integrates external airline APIs and GDS services to
-                        ensure live fare, availability, and booking synchronization.
-                    </p>
-                </div>
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Real-time flight, hotel & package search and booking</li>
+                    <li>Support for both B2B agent and B2C customer operations</li>
+                    <li>Full booking lifecycle management end-to-end</li>
+                    <li>Live GDS & Airline API data integration</li>
+                    <li>Modular, maintainable backend services</li>
+                </ul>
+            </div>
 
-                <!-- My Role -->
-                <div class="project-section">
-                    <h2>My Role & Responsibilities</h2>
-                    <ul>
-                        <li>
-                            Designed and developed high-performance ASP.NET Web APIs and MVC
-                            modules.
-                        </li>
-                        <li>Integrated GDS and Airline APIs for real-time booking.</li>
-                        <li>
-                            Implemented full booking lifecycle (Search → Book → Issue → Reissue →
-                            Cancel → Refund).
-                        </li>
-                        <li>Developed role-based access for Admin, Agents, and Customers.</li>
-                        <li>
-                            Optimized complex SQL stored procedures for high-speed transaction
-                            handling.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Key Features -->
-                <div class="project-section">
-                    <h2>Key Features</h2>
-                    <ul>
-                        <li>Real-time flight search & booking</li>
-                        <li>Hotel booking with dynamic pricing & availability</li>
-                        <li>Holiday & tour package module</li>
-                        <li>Secure payment & ticket issuance</li>
-                        <li>Admin dashboard & reporting system</li>
-                    </ul>
-                </div>
-
-                <!-- Technology Stack -->
-                <div class="project-section">
-                    <h2>Technology Stack</h2>
-                    <div class="tech-stack">
-                        <span>ASP.NET MVC</span>
-                        <span>ASP.NET Web API</span>
-                        <span>Microsoft SQL Server</span>
-                        <span>Bootstrap</span>
-                        <span>jQuery</span>
-                    </div>
-                </div>
-
-                <!-- Challenges -->
-                <div class="project-section">
-                    <h2>Technical Challenges & Solutions</h2>
-                    <p>
-                        Handling real-time booking synchronization required efficient API response
-                        handling and database transaction management. Optimized indexing strategies
-                        and stored procedures reduced query execution time significantly under high
-                        traffic.
-                    </p>
-                </div>
-
-                <!-- Actions -->
-                <div class="project-actions">
-                    <a href="../index.html#projects" class="btn-secondary">Back to Projects</a>
-                    <a href="#" class="btn-primary">Live Demo</a>
+            <div class="project-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-stack">
+                    <span class="tag">ASP.NET Core</span>
+                    <span class="tag">ASP.NET MVC</span>
+                    <span class="tag">Microsoft SQL Server</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">GDS Integration</span>
                 </div>
             </div>
-        </section>
 
-        <footer>
-            <div class="container">
-                <p>© 2024 Monkir Chowdhury. All rights reserved.</p>
+            <div class="project-actions">
+                <a href="../index.html#projects" class="btn-ghost">← Back to Projects</a>
+                <a href="https://primetechbd.com/tripper.html" target="_blank" rel="noopener"
+                    class="btn-primary">Visit Live Project →</a>
             </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/monkir" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/monkir/" target="_blank">LinkedIn</a>
+                <a href="https://www.hackerrank.com/profile/monkir" target="_blank">HackerRank</a>
+            </div>
+            <p>Email: <a href="mailto:monkirchowdhury@gmail.com">monkirchowdhury@gmail.com</a></p>
+            <p>© <span id="year"></span> Monkir Chowdhury. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+</body>
+
 </html>

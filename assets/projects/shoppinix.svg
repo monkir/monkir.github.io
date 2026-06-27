@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Shoppinix e-commerce platform cover">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f8fff" />
+            <stop offset="100%" stop-color="#a78bfa" />
+        </linearGradient>
+        <radialGradient id="glow" cx="50%" cy="32%" r="65%">
+            <stop offset="0%" stop-color="#4f8fff" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#4f8fff" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        </pattern>
+    </defs>
+    <rect width="800" height="500" fill="#0e1320" />
+    <rect width="800" height="500" fill="url(#grid)" />
+    <rect width="800" height="500" fill="url(#glow)" />
+    <circle cx="660" cy="80" r="170" fill="#a78bfa" opacity="0.16" />
+    <circle cx="110" cy="440" r="140" fill="#4f8fff" opacity="0.14" />
+    <circle cx="400" cy="250" r="98" fill="url(#bg)" opacity="0.92" />
+    <text x="400" y="252" font-size="96" text-anchor="middle" dominant-baseline="central">&#128717;&#65039;</text>
+</svg>
