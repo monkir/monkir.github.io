@@ -211,6 +211,7 @@ header nav {
     text-decoration: none;
     transition: border-color .2s, background .2s, transform .2s;
     flex-shrink: 0;
+    /* display: none; */
 }
 
 .btn-resume:hover {
@@ -1331,5 +1332,9 @@ footer a {
 
     .timeline-dot {
         left: -0.45rem;
+    }
+
+    .btn-resume{
+        display: none;
     }
 }
