@@ -32,16 +32,6 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ─── SKILLS TABS ───
-const skillsTabs = document.querySelectorAll('.skills-tab');
-const skillsPanels = document.querySelectorAll('.skills-panel');
-skillsTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const cat = tab.dataset.cat;
-        skillsTabs.forEach(t => t.classList.toggle('active', t === tab));
-        skillsPanels.forEach(p => p.classList.toggle('active', p.dataset.cat === cat));
-    });
-});
 
 // ─── MOBILE SIDEBAR ───
 const menuToggle = document.getElementById('menuToggle');
